@@ -117,7 +117,7 @@ resource "vsphere_virtual_machine" "vm" {
     ]
     create_before_destroy = true
   }
-
+/*
   # Specify the connection
   # Specify the connection
   connection {
@@ -207,5 +207,6 @@ EOF
       "bash -c './VM_add_ssh_key.sh  \"${var.vm_os_user}\" \"${local.public_ssh_key}\" \"${local.private_ssh_key}\">> VM_add_ssh_key.log 2>&1'",
     ]
   }
+  */
 }
 
