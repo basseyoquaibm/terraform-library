@@ -84,6 +84,18 @@
       "group_name": "custom_vm_attributes"
     },
     {
+      "name": "service_tag_includes",
+      "default": ["customer"],
+      "description": "A list of service tags to include on the virual machine",
+      "type": "list",
+      "required": true,
+      "secured": false,
+      "label": "Service Tags",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "custom_vm_attributes"
+    }, 
+    {
       "name": "vm_ipv4_address",
       "type": "string",
       "description": "IPv4 address for vNIC configuration",
@@ -285,7 +297,7 @@
       "hidden": false,
       "immutable": false,
       "group_name": "vsphere_managed_inventory_definition"
-    }, 
+    },
     {
       "name": "dns_suffixes",
       "default":"${vsphere_managed_inventory_definition.dns_suffixes}",
