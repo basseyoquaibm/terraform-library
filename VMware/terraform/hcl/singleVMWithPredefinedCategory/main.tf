@@ -81,6 +81,7 @@ resource "vsphere_virtual_machine" "vm" {
   clone {
     template_uuid = data.vsphere_virtual_machine.vm_image_template.id
     timeout       = var.vm_clone_timeout
+    /*
     customize {
       linux_options {
         domain    = var.vm_domain_name
@@ -95,7 +96,7 @@ resource "vsphere_virtual_machine" "vm" {
       ipv4_gateway    = var.vm_ipv4_gateway
       dns_suffix_list = var.dns_suffixes
       dns_server_list = var.dns_servers
-    }
+    }*/
   }
 
   network_interface {
