@@ -26,7 +26,7 @@ locals {
   #private_ssh_key="${tls_private_key.generate.private_key_pem}"
   #public_ssh_key="${tls_private_key.generate.public_key_openssh}"
 }
-
+/*
 #List of tags that will be added from service
 variable "service_tag_includes" {
   type = list
@@ -57,7 +57,7 @@ data "vsphere_tag" "tag" {
   name = values(local.tagmap)[count.index]
   category_id = data.vsphere_tag_category.category[count.index].id
 }
-
+*/
 resource "random_string" "random-dir" {
   length  = 8
   special = false
@@ -77,7 +77,7 @@ resource "vsphere_virtual_machine" "vm" {
   datastore_id     = data.vsphere_datastore.datastore.id
   guest_id         = data.vsphere_virtual_machine.vm_image_template.guest_id
   scsi_type        = data.vsphere_virtual_machine.vm_image_template.scsi_type
-  tags             = data.vsphere_tag.tag.*.id
+  //tags             = data.vsphere_tag.tag.*.id
   clone {
     template_uuid = data.vsphere_virtual_machine.vm_image_template.id
     timeout       = var.vm_clone_timeout
